@@ -1,8 +1,12 @@
 import 'package:collection/collection.dart';
+import 'package:comp_401_project/core/utils/functions/is_solvable.dart';
 import 'package:comp_401_project/models/puzzle_state_model/puzzle_state_model.dart';
 
 PuzzleState? solvePuzzle(List<List<int>> startState, List<List<int>> goalState,
     int Function(PuzzleState, List<List<int>>) heuristic) {
+  if (!isSolvable(startState, goalState)) {
+    return null;
+  }
   final priorityQueue = PriorityQueue<PuzzleState>((a, b) =>
       (heuristic(a, goalState) + a.moves) -
       (heuristic(b, goalState) + b.moves));

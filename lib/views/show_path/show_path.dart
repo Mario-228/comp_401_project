@@ -8,11 +8,15 @@ class ShowPath extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       body: Center(
-        child: Expanded(
+        child: SizedBox(
+          width: 150,
           child: ListView.separated(
-              itemBuilder: (context, index) =>
-                  CustomHomeGridView(numbers: path[index].board),
+              itemBuilder: (context, index) => SizedBox(
+                  width: 100,
+                  height: 150,
+                  child: CustomHomeGridView(numbers: path[index].board)),
               separatorBuilder: (context, index) => const Divider(),
               itemCount: path.length),
         ),

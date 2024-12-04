@@ -17,6 +17,24 @@ class PuzzleState {
     return count;
   }
 
+  int manhattanDistance(List<List<int>> goalState) {
+    int distance = 0;
+    for (int i = 0; i < board.length; i++) {
+      for (int j = 0; j < board[i].length; j++) {
+        if (board[i][j] != 0) {
+          for (int r = 0; r < goalState.length; r++) {
+            for (int c = 0; c < goalState[r].length; c++) {
+              if (goalState[r][c] == board[i][j]) {
+                distance += (i - r).abs() + (j - c).abs();
+              }
+            }
+          }
+        }
+      }
+    }
+    return distance;
+  }
+
   bool isGoal(List<List<int>> goalState) {
     return board.toString() == goalState.toString();
   }
