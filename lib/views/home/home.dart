@@ -1,4 +1,5 @@
-import 'package:comp_401_project/core/utils/functions/misplaced_tiles.dart';
+import 'package:comp_401_project/core/utils/functions/manhattan_distance.dart';
+//import 'package:comp_401_project/core/utils/functions/misplaced_tiles.dart';
 import 'package:comp_401_project/views/home/widgets/initial_and_goal_state_8_puzzle.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +14,7 @@ class Home extends StatelessWidget {
         child: InitialAndGoalState8Puzzle(
           goalState: getRandomPuzzle(),
           initialState: getRandomPuzzle(),
-          heuristic: misplacedTiles,
+          heuristic: manhattanDistance,
         ),
       ),
     );
