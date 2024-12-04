@@ -12,9 +12,11 @@ class CustomHomeGridView extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(15.0),
       child: SizedBox(
-        height: 250.0,
-        width: 250.0,
+        height: 150.0,
+        width: 150.0,
         child: GridView.builder(
+          physics: const NeverScrollableScrollPhysics(),
+          shrinkWrap: true,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 3,
             crossAxisSpacing: 1.0,

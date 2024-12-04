@@ -7,13 +7,15 @@ class ShowPath extends StatelessWidget {
   final List<PuzzleState> path;
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
     return Scaffold(
+      appBar: AppBar(),
       body: Center(
-        child: Expanded(
+        child: SizedBox(
+          width: 150,
           child: ListView.separated(
-              itemBuilder: (context, index) => Container(
-                  height: width,
+              itemBuilder: (context, index) => SizedBox(
+                  width: 100,
+                  height: 150,
                   child: CustomHomeGridView(numbers: path[index].board)),
               separatorBuilder: (context, index) => const Divider(),
               itemCount: path.length),
