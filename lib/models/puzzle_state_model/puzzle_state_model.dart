@@ -22,8 +22,8 @@ class PuzzleState {
     for (int i = 0; i < board.length; i++) {
       for (int j = 0; j < board[i].length; j++) {
         if (board[i][j] != 0) {
-          int goalRow = (board[i][j] - 1) ~/ 3;
-          int goalCol = (board[i][j] - 1) % 3;
+          int goalRow = (goalState[i][j] - 1) ~/ 3;
+          int goalCol = (goalState[i][j] - 1) % 3;
           distance += (i - goalRow).abs() + (j - goalCol).abs();
         }
       }
