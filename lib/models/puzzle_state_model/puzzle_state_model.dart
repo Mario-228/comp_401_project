@@ -2,7 +2,6 @@ class PuzzleState {
   final List<List<int>> board;
   final int moves;
   final PuzzleState? parent;
-
   PuzzleState(this.board, this.moves, this.parent);
 
   int misplacedTiles(List<List<int>> goalState) {

@@ -78,7 +78,10 @@ class _InitialAndGoalState8PuzzleState
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => ShowPath(path: path),
+                          builder: (context) => ShowPath(
+                              path: path,
+                              goal: widget.goalState,
+                              isManhattan: true),
                         ),
                       );
                     }
