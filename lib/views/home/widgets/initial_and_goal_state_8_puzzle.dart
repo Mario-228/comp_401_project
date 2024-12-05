@@ -13,10 +13,12 @@ class InitialAndGoalState8Puzzle extends StatefulWidget {
     required this.initialState,
     required this.goalState,
     required this.heuristic,
+    this.isManhattan = false,
   });
 
   List<List<int>> initialState;
   final List<List<int>> goalState;
+  final bool isManhattan;
   final int Function(PuzzleState, List<List<int>>)? heuristic;
 
   @override
@@ -79,9 +81,10 @@ class _InitialAndGoalState8PuzzleState
                         context,
                         MaterialPageRoute(
                           builder: (context) => ShowPath(
-                              path: path,
-                              goal: widget.goalState,
-                              isManhattan: true),
+                            path: path,
+                            goal: widget.goalState,
+                            isManhattan: widget.isManhattan,
+                          ),
                         ),
                       );
                     }
